@@ -1,13 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+
+    <!-- SEO関連 -->
+    <title>サイトのタイトル</title>
+    <meta name="description" content="このページの説明文をここに記載します。" />
+    <meta name="keywords" content="キーワード1, キーワード2, サイト名" />
+
+    <!-- SNS / OGP対応 -->
+    <meta property="og:title" content="サイトのタイトル" />
+    <meta property="og:description" content="SNSシェア用の説明文" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/ogp.jpg" />
+    <meta property="og:site_name" content="サイト名" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Twitterタイトル" />
+    <meta name="twitter:description" content="Twitter用の説明" />
+    <meta name="twitter:image" content="https://example.com/ogp.jpg" />
+
+    <!-- ファビコン -->
+    <link rel="icon" href="/favicon.ico" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/src/styles/main.scss" />
+    <!-- JavaScript -->
+    <script type="module" src="/src/main.ts" defer></script>
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <header>
+      <h1>ロゴ</h1>
+      <nav></nav>
+    </header>
+
+    <main></main>
+
+    <footer></footer>
   </body>
 </html>
