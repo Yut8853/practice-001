@@ -23,7 +23,7 @@ export default defineConfig([
   {
     files: ['**/*.{ts,tsx,js}'],
     rules: {
-      ...prettier.rules,
+      ...(prettier as { rules: Record<string, 'off' | 0> }).rules,
     },
   },
 ]);
