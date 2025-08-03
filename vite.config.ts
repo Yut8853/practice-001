@@ -1,17 +1,20 @@
-// vite.config.ts
 import { defineConfig } from 'vite';
-import { imagetools } from 'vite-imagetools';
+import viteImagemin from 'vite-plugin-imagemin';
 import compression from 'vite-plugin-compression';
 
 export default defineConfig({
   plugins: [
-    imagetools({
-      defaultDirectives: new URLSearchParams({
-        format: 'webp',
-        quality: '75',
-      }),
+    viteImagemin({
+      webp: {
+        quality: 75,
+      },
+      mozjpeg: {
+        quality: 75,
+      },
+      optipng: {
+        optimizationLevel: 5,
+      },
     }),
-
     compression({
       algorithm: 'gzip',
       ext: '.gz',

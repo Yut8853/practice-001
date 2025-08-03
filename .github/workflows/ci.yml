@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Node.js をセットアップ
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: パッケージをインストール
+        run: npm ci
+
+      - name: Lint チェック
+        run: npm run lint
+
+      - name: フォーマットチェック
+        run: npm run format
+
+      - name: ビルド
+        run: npm run build
